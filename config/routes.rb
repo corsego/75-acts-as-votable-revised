@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :messages do
     member do
-      patch :upvote
-      patch :downvote
       patch :vote
       patch :bookmark
     end
