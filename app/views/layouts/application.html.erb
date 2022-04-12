@@ -13,6 +13,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= Time.zone.now %>
     <%= link_to_unless_current "Home", root_path %>
     <% if current_user %>
       <%= link_to_unless_current "Dashboard", dashboard_path %>

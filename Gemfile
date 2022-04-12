@@ -72,3 +72,5 @@ group :test do
 end
 
 gem 'devise', github: 'heartcombo/devise', branch: 'main'
+
+gem "acts_as_votable", "~> 0.13.2"

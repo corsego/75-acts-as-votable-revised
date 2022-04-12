@@ -3,5 +3,22 @@
     <strong>Body:</strong>
     <%= message.body %>
   </p>
+  
+  upvotes: <%= message.cached_scoped_like_votes_up %>
+  <br>
+  downvotes: <%= message.cached_scoped_like_votes_down %>
+  <br>
+  score: <%= message.cached_weighted_like_score %>
+  <br>
+  total votes: <%= message.cached_weighted_like_total %>
+
+  <%#= button_to upvote_label(message, current_user), upvote_message_path(message), method: :patch, style: upvote_label_styles(message, current_user) %>
+  <%#= button_to "Upvote & redirect", upvote_message_path(message, format: :html), method: :patch %>
+  <%#= button_to downvote_label(message, current_user), downvote_message_path(message), method: :patch, style: downvote_label_styles(message, current_user) %>
+
+  <%= button_to upvote_label(message, current_user), vote_message_path(message, type: :upvote), method: :patch, style: upvote_label_styles(message, current_user) %>
+  <%= button_to downvote_label(message, current_user), vote_message_path(message, type: :downvote), method: :patch, style: downvote_label_styles(message, current_user) %>
+
+  <%= button_to bookmark_label(message, current_user), bookmark_message_path(message), method: :patch, style: bookmark_label_styles(message, current_user) %>
 
 </div>
